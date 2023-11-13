@@ -2,3 +2,7 @@ ul li {
     list-style: none;
     
 }
+
+.navbar li {
+    list-style: none !important;
+}

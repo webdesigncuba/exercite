@@ -29,9 +29,12 @@
                     <td>{{$person->email}}</td>
                     <td><img class="img-fluid" src="{{$person->avatar}}"></td>
                     <td> 
+                        @auth
                         <a class="btn btn-sm btn-success" href="{{ route('person.edit' , ['id'=>$person->id] )}}">Edit</a>
                         <a class="btn btn-sm btn-danger" href="{{ route('person.delete' , ['id'=>$person->id] )}}">Delete</a>  
-                        <a class="btn btn-sm btn-danger" href="{{ route('person.detail' , ['id'=>$person->id] )}}">Detail</a>    
+                        <a class="btn btn-sm btn-danger" href="{{ route('person.detail' , ['id'=>$person->id] )}}">Detail</a> 
+                        @endauth
+                          
                     </td>
                 </tr>
                 @endforeach

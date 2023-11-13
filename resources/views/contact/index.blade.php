@@ -27,8 +27,11 @@
                     <td>{{$contact->code}}</td>
                     <td>{{$contact->number}}</td>
                     <td> 
-                    <a class="btn btn-sm btn-success" href="{{ route('contact.edit' , ['id'=>$contact->id] )}}">Edit</a>
-                        <a class="btn btn-sm btn-danger" href="{{ route('contact.delete' , ['id'=>$contact->id] )}}">Delete</a>  
+                        @auth
+                        <a class="btn btn-sm btn-success" href="{{ route('contact.edit' , ['id'=>$contact->id] )}}">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="{{ route('contact.delete' , ['id'=>$contact->id] )}}">Delete</a>   
+                        @endauth
+                   
                     </td>
                 </tr>
                 @endforeach
